@@ -9,16 +9,7 @@ function MainLayout() {
   useScrollToTop();
 
   return (
-    <div
-      className="w-full min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/src/assets/images/op1.jpg')",
-        backgroundAttachment: "fixed",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="w-full min-h-screen bg-cover bg-center">
       <style>{`
         @media (max-width: 768px) {
           div {
