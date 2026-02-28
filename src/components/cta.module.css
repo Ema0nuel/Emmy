@@ -1,0 +1,366 @@
+.ctaSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(15, 23, 42, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+/* Background Gradients */
+.bgGradients {
+  position: absolute;
+  inset: 0;
+  z-index: -20;
+  pointer-events: none;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  top: 0;
+  left: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+  filter: blur(80px);
+}
+
+.gradientOrb2 {
+  position: absolute;
+  bottom: 0;
+  right: -160px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent);
+  filter: blur(80px);
+}
+
+.gradientOrb3 {
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent);
+  filter: blur(80px);
+}
+
+/* Floating World SVG Container */
+.worldContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  max-width: 80vw;
+  max-height: 80vh;
+  z-index: 10;
+}
+
+/* Floating Icons */
+.floatingIcon {
+  position: absolute;
+  font-size: 2.5rem;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingIcon > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 20;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Headline */
+.headline {
+  margin-bottom: 2rem;
+}
+
+.mainHeading {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.subHeading {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.letter {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.jetpackIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: #f97316;
+  filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.6));
+  flex-shrink: 0;
+}
+
+.jetpackIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Description */
+.description {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* Button Group */
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .buttonGroup {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+/* Button Styles */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  border: 1.5px solid;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.button[data-type="whatsapp"] {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.button[data-type="whatsapp"]:hover {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.2),
+    0 16px 40px rgba(16, 185, 129, 0.2),
+    0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.button[data-type="email"] {
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.button[data-type="email"]:hover {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow:
+    inset 0 2px 8px rgba(255, 255, 255, 0.2),
+    0 16px 40px rgba(59, 130, 246, 0.2),
+    0 0 30px rgba(59, 130, 246, 0.1);
+}
+
+.buttonIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.buttonWave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* Availability Badge */
+.availability {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.statusDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+}
+
+.availability span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .ctaSection {
+    padding: 2rem 1rem;
+    min-height: auto;
+  }
+
+  .worldContainer {
+    width: 320px;
+    height: 320px;
+    opacity: 0.08 !important;
+  }
+
+  .floatingIcon {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .jetpackIcon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .buttonGroup {
+    gap: 1rem;
+  }
+
+  .button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .worldContainer {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .ctaSection {
+    padding: 4rem 2rem;
+  }
+
+  .button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ctaSection,
+  .ctaSection * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .button {
+    border-width: 2px;
+    font-weight: 700;
+  }
+}
+
+/* Dark mode (default) */
+@media (prefers-color-scheme: dark) {
+  .ctaSection {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(1, 1, 1, 0.2) 50%,
+      transparent 100%
+    );
+  }
+}
