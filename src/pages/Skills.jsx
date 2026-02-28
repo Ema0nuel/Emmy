@@ -16,12 +16,12 @@ const Skills = () => {
       "Check out my technical skills in React, TypeScript, Node.js, Python, design systems, and emerging technologies.",
     keywords:
       "Skills, React, TypeScript, Node.js, Backend, Frontend, Web Development, Full Stack",
-    canonicalUrl: "https://codewithnuel.com/skills",
+    canonicalUrl: "https://codenuel.vercel.app/skills",
     openGraph: {
       title: "Skills - Emmanuel Sunday",
       description:
         "My technical expertise across frontend, backend, and design.",
-      url: "https://codewithnuel.com/skills",
+      url: "https://codenuel.vercel.app/skills",
       type: "website",
     },
   });

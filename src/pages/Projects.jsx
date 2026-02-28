@@ -20,14 +20,14 @@ const Projects = () => {
       "Showcase of production-ready projects including full-stack applications, real-time systems, and backend architectures.",
     keywords:
       "Projects, Portfolio, React, Node.js, Full Stack, Web Development",
-    canonicalUrl: "https://codewithnuel.com/projects",
+    canonicalUrl: "https://codenuel.vercel.app/projects",
     openGraph: {
       title: "Projects - Emmanuel Sunday",
       description:
         "Production-ready systems built with performance, scale, and real-time architecture in mind.",
-      url: "https://codewithnuel.com/projects",
+      url: "https://codenuel.vercel.app/projects",
       type: "website",
-      image: "https://codewithnuel.com/og-projects.jpg",
+      image: "https://codenuel.vercel.app/og-projects.jpg",
     },
   });
 

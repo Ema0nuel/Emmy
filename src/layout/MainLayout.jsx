@@ -10,11 +10,22 @@ function MainLayout() {
 
   return (
     <div
-      className="w-full min-h-screen bg-cover bg-fixed bg-center"
+      className="w-full min-h-screen bg-cover bg-center"
       style={{
         backgroundImage: "url('/src/assets/images/op1.jpg')",
+        backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
+      <style>{`
+        @media (max-width: 768px) {
+          div {
+            background-attachment: scroll !important;
+          }
+        }
+      `}</style>
       <Navbar />
       <main className="pt-16 md:pt-20 relative z-10 min-h-[calc(100vh-64px)]">
         <Outlet />

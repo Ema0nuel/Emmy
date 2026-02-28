@@ -4,8 +4,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-size: 15px;
@@ -24,8 +25,20 @@ body {
     "Noto Color Emoji",
     sans-serif;
 }
+
+/* Mobile fix: disable fixed attachment on small screens */
+@media (max-width: 768px) {
+  html,
+  body {
+    background-attachment: scroll;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 body::selection {
-  color: aliceblue #000;
+  color: #1b1b1b;
+  background-color: rgb(255 255 255 / 0.6);
 }
 
 /* ============================================================================

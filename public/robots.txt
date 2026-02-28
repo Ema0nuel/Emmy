@@ -1,0 +1,14 @@
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (if any)
+Disallow: /admin
+Disallow: /.env
+Disallow: /node_modules
+
+# Point to sitemap
+Sitemap: https://codenuel.vercel.app/sitemap.xml
+
+# Crawl delay (optional, prevents server overload)
+Crawl-delay: 1

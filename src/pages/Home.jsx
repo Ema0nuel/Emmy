@@ -14,14 +14,14 @@ const Home = () => {
       "3+ years of web development experience. Specializing in React, TypeScript, Node.js, and full-stack applications.",
     keywords:
       "Frontend Developer, Backend Developer, React, TypeScript, Node.js, Web Development, Full Stack",
-    canonicalUrl: "https://codewithnuel.com",
+    canonicalUrl: "https://codenuel.vercel.app",
     openGraph: {
       title: "Emmanuel Sunday | Full Stack Developer & Creative Engineer",
       description:
         "Explore my portfolio showcasing full-stack web development, creative engineering, and innovative digital solutions.",
-      url: "https://codewithnuel.com",
+      url: "https://codenuel.vercel.app",
       type: "website",
-      image: "https://codewithnuel.com/og-image.jpg",
+      image: "https://codenuel.vercel.app/og-image.jpg",
       image_alt: "Emmanuel Sunday Portfolio",
       site_name: "Emmanuel Sunday Portfolio",
     },
@@ -30,18 +30,18 @@ const Home = () => {
       title: "Emmanuel Sunday | Full Stack Developer & Creative Engineer",
       description:
         "3+ years of web development experience. Specializing in React, TypeScript, Node.js, and full-stack applications.",
-      image: "https://codewithnuel.com/og-image.jpg",
+      image: "https://codenuel.vercel.app/og-image.jpg",
       creator: "@codewithnuel",
     },
     structuredData: {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Emmanuel Sunday",
-      url: "https://codewithnuel.com",
+      url: "https://codenuel.vercel.app",
       jobTitle: "Full Stack Developer",
       description:
         "3+ years of web development experience. Specializing in React, TypeScript, Node.js, and full-stack applications.",
-      image: "https://codewithnuel.com/profile.jpg",
+      image: "https://codenuel.vercel.app/profile.jpg",
       sameAs: [
         "https://github.com/Ema0nuel",
         "https://www.linkedin.com/in/ema0nuel",
