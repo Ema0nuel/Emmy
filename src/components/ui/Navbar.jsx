@@ -175,7 +175,7 @@ const Navbar = () => {
 
             {/* CTA Button - Mobile Glass */}
             <a
-              href="mailto:contact@emmanuelportfolio.com"
+              href="mailto:emas08177@gmail.com"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 px-4 py-3.5 rounded-lg bg-gradient-to-r from-white/20 to-white/10 hover:from-white/30 hover:to-white/20 border border-white/40 hover:border-white/60 text-white font-semibold text-base text-center transition-all duration-300 mt-3 glass-element backdrop-blur-md"
             >

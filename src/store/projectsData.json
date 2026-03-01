@@ -115,7 +115,7 @@
   },
   {
     "id": "servece-business-platform",
-    "name": "Servece Business Platform",
+    "name": "Service Now Business Platform",
     "category": "Frontend Application",
     "featured": false,
     "role": "Frontend Engineer",
@@ -134,9 +134,9 @@
     ],
     "technicalDecisions": "Prioritized responsive grid structure and performance optimization.",
     "github": null,
-    "live": "https://www.servece.biz/",
+    "live": "https://www.servicenow.com/",
     "image": "/projects/servece.png",
-    "ogImage": "/projects/og-servece.png"
+    "ogImage": "/projects/servece.png"
   },
   {
     "id": "mk-signature-shop",
