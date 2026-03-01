@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 *.env
 .env
+INTEGRATION_SETUP.md
+INTEGRATION_SUMMARY.md
+verify-integration.js
