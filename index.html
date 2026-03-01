@@ -75,9 +75,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://codenuel.vercel.app/" />
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="/src/assets/css/reset.css" as="style" />
-    <link rel="preload" href="/src/assets/images/op1.jpg" as="image" />
+    <!-- Preload Critical Resources (Fixed) -->
+    <!-- ✅ Background image: Correct path and as="image" -->
+    <link rel="preload" href="/op1.jpg" as="image" fetchpriority="high" />
 
     <!-- Favicon & Apple Touch -->
     <link rel="icon" type="image/svg+xml" href="/op1.svg" />

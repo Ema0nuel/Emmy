@@ -23,11 +23,11 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
           >
-            <motion.div className="w-full max-w-3xl glass-card-pillar rounded-3xl overflow-hidden border border-white/40">
+            <motion.div className="w-full max-w-3xl glass-card-pillar rounded-3xl overflow-hidden border border-white/40 relative">
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 z-10 p-2 glass-element rounded-full transition hover:glass-card-pillar-hover"
+                className="absolute top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-6 md:translate-x-0 z-10 p-2 glass-element rounded-full transition hover:glass-card-pillar-hover"
               >
                 <X size={24} className="text-gray-700" />
               </button>

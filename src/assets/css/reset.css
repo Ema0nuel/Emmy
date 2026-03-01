@@ -1,14 +1,10 @@
 html,
-body {
-  background-image: url("../images/op1.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
+body,
+#root {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   font-size: 15px;
   font-weight: 500;
   -webkit-text-size-adjust: 100%;
@@ -26,62 +22,55 @@ body {
     sans-serif;
 }
 
-/* Mobile fix: disable fixed attachment on small screens */
-@media (max-width: 768px) {
-  html,
-  body {
+html {
+  background-image: url("/op1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #1a1a1a;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ✅ CRITICAL: Mobile override - fixes iOS Safari & Android Chrome */
+@media screen and (max-width: 1024px) {
+  html {
     background-attachment: scroll;
-    height: auto;
-    min-height: 100vh;
+    background-position: center top;
   }
 }
 
-body::selection {
-  color: #1b1b1b;
-  background-color: rgb(255 255 255 / 0.6);
+@media screen and (max-width: 768px) {
+  html {
+    background-attachment: scroll;
+  }
 }
 
-/* ============================================================================
-   SMOOTH SCROLLING & NATURAL FLOW
-   ============================================================================ */
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Root container: allow natural document flow */
 #root {
-  width: 100%;
-  height: auto;
-  position: static;
-  top: auto;
-  left: auto;
-  background-color: transparent;
-  overflow: visible;
-  -webkit-overflow-scrolling: touch; /* ✅ Enable momentum scrolling on iOS */
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
 }
 
 /* ============================================================================
-   SCROLLBAR STYLING - TRANSPARENT ACROSS ALL BROWSERS
+   SCROLLBAR STYLING
    ============================================================================ */
 
-/* Webkit browsers (Chrome, Safari, Edge) - Transparent scrollbar */
 html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-#root::-webkit-scrollbar {
-  width: 10px; /* Vertical scrollbar width */
-  height: 10px; /* Horizontal scrollbar height */
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
 html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track,
-#root::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
   background: transparent;
 }
 
 html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb,
-#root::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   border: 2px solid transparent;
@@ -90,39 +79,16 @@ body::-webkit-scrollbar-thumb,
 }
 
 html::-webkit-scrollbar-thumb:hover,
-body::-webkit-scrollbar-thumb:hover,
-#root::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
   background-clip: padding-box;
 }
 
-html::-webkit-scrollbar-thumb:active,
-body::-webkit-scrollbar-thumb:active,
-#root::-webkit-scrollbar-thumb:active {
-  background: rgba(255, 255, 255, 0.4);
-  background-clip: padding-box;
-}
-
-/* Firefox - Transparent scrollbar */
-html,
-body,
-#root {
+html {
+  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
-
-/* Hover state for Firefox */
-@supports (-moz-appearance: none) {
-  html:hover,
-  body:hover,
-  #root:hover {
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
-  }
-}
-
-/* ============================================================================
-   UNIVERSAL BOX MODEL & SMOOTHING
-   ============================================================================ */
 
 * {
   box-sizing: border-box;
@@ -133,46 +99,24 @@ body,
 }
 
 /* ============================================================================
-   INPUT & FORM FIELDS
+   FORMS & INPUTS
    ============================================================================ */
 
 input,
 textarea,
 select {
-  font-size: 16px; /* ✅ Prevents iOS auto-zoom on focus */
+  font-size: 16px;
   font-family: inherit;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   outline: none;
   border-radius: 4px;
 }
 
-/* Custom scrollbar for textareas */
-textarea::-webkit-scrollbar {
-  width: 8px;
-}
-
-textarea::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-textarea::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-textarea::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* Remove default button styles */
 button {
   font-family: inherit;
   font-size: inherit;
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border: none;
   background: none;
@@ -180,14 +124,10 @@ button {
   cursor: pointer;
 }
 
-/* ============================================================================
-   LINKS & INTERACTIVE ELEMENTS
-   ============================================================================ */
-
 a {
   color: inherit;
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent; /* Remove tap flash */
+  -webkit-tap-highlight-color: transparent;
   outline: none;
   transition: color 0.3s ease;
 }
@@ -195,12 +135,11 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
-  outline: none;
-  touch-action: manipulation; /* Enable default mobile interactions */
+  touch-action: manipulation;
 }
 
 /* ============================================================================
-   IMAGES & MEDIA
+   MEDIA & TYPOGRAPHY
    ============================================================================ */
 
 img,
@@ -213,16 +152,10 @@ svg {
   height: auto;
 }
 
-/* Responsive images */
 img {
   -webkit-user-drag: none;
-  -webkit-user-select: none;
   user-select: none;
 }
-
-/* ============================================================================
-   TYPOGRAPHY & HEADING HIERARCHY
-   ============================================================================ */
 
 h1,
 h2,
@@ -238,13 +171,8 @@ h6 {
 
 p {
   margin: 0;
-  padding: 0;
   line-height: 1.6;
 }
-
-/* ============================================================================
-   LISTS
-   ============================================================================ */
 
 ul,
 ol,
@@ -254,8 +182,13 @@ li {
   list-style: none;
 }
 
+body::selection {
+  color: #1b1b1b;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 /* ============================================================================
-   ACCESSIBILITY - RESPECT USER PREFERENCES
+   ACCESSIBILITY
    ============================================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -263,36 +196,25 @@ li {
     scroll-behavior: auto;
   }
 
-  html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb,
-  #root::-webkit-scrollbar-thumb {
-    transition: none;
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 @media (prefers-contrast: more) {
-  html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb,
-  #root::-webkit-scrollbar-thumb {
+  html::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.35);
   }
 }
 
-/* Dark mode support (if implemented) */
 @media (prefers-color-scheme: dark) {
-  #root {
-    background-color: transparent;
-  }
-
-  html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb,
-  #root::-webkit-scrollbar-thumb {
+  html::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
   }
 
-  html::-webkit-scrollbar-thumb:hover,
-  body::-webkit-scrollbar-thumb:hover,
-  #root::-webkit-scrollbar-thumb:hover {
+  html::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.35);
   }
 }
