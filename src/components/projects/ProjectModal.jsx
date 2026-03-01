@@ -27,7 +27,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-6 md:translate-x-0 z-10 p-2 glass-element rounded-full transition hover:glass-card-pillar-hover"
+                className="absolute top-12 left-1/2 -translate-x-1/2 md:left-auto md:right-6 md:translate-x-0 z-10 p-2 glass-element rounded-full transition hover:glass-card-pillar-hover"
               >
                 <X size={24} className="text-gray-700" />
               </button>
